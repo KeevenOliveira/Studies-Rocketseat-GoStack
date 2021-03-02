@@ -1,5 +1,5 @@
-<p align=center>
-   <img src="https://github.com/KeevenOliveira/Studies-Rocketseat-GoStack/blob/main/Start%20-%20Preparativos/Cronograma%20-%20Notion/assets/Captura%20de%20Tela%20(57).png">
+<p align="center">
+   <img width="750px" src="https://github.com/KeevenOliveira/Studies-Rocketseat-GoStack/blob/main/Start%20-%20Preparativos/Cronograma%20-%20Notion/assets/Captura%20de%20Tela%20(57).png">
 </p>
 
 # English 🌐 #
