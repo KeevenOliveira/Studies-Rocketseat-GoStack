@@ -1,5 +1,7 @@
 const express = require('express');
 
+const cors = require('cors');
+
 const {v4: uuidv4, v4: isUuid} = require('uuid');
 
 // Universal Unic ID
@@ -28,6 +30,8 @@ const {v4: uuidv4, v4: isUuid} = require('uuid');
  */
 
 const app = express();
+
+app.use(cors()); //vai permitir que qualquer front-end tenha acessoa no nosso back-end
 
 app.use(express.json());
 
