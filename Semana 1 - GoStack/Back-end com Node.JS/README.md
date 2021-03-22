@@ -2,7 +2,7 @@
 
 <p>Este é o primeiro módulo do GoStack da Rocketseat. Iniciamos com Back-end utilizando o NodeJS.🚀</p>
 
-<p>Durante esse módulo o Diego nos ensinou a lógica do Node JS, como ele funciona debaixo dos panos, seus benefícios, seus frameworks.❣
+<p>Durante esse módulo o Diego nos ensinou a lógica do Node JS, como ele funciona debaixo dos panos, seus benefícios, suas libs❣
 </p>
 <h3>👌Segue mais coisas ensinadas nesse módulo</h3>
 
