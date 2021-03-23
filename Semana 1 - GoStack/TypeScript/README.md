@@ -4,7 +4,7 @@
 
 - ⚠ OBS.: A pasta build tem o código TypeScript convertido para JavaScript.
 
-<h3>🚀Segue mais coisas ensinadas nesse módulo</h3>
+<h3>🚀Segue mais coisas ensinadas nesse módulo: </h3>
 
 - O IntelliSense;
 - Mitos e verdades;
