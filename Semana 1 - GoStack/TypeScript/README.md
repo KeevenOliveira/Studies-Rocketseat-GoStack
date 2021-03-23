@@ -2,7 +2,7 @@
 
 <p>Nesse módulo eu aprendi muita, mas muuiitaa coisa mesmo de TypeScript. É o tipo de Aula que a gente vai ali e dá uma olhada depois de um tempo para revisar só uns conceitos básicos. Revi o que é o TypeScript, por que usar, dentre outras coisas!🥳</p>
 
-- OBS.: A pasta build tem o código TypeScript convertido para JavaScript.
+- ⚠ OBS.: A pasta build tem o código TypeScript convertido para JavaScript.
 
 <h3>🚀Segue mais coisas ensinadas nesse módulo</h3>
 
