@@ -3,7 +3,20 @@
 <p>Mais uma semana com conteúdos em massa!! Durante essa semana aprendi muita coisa, mas muita mesmo!</p>
 
 😆Segue os conteúdos aprendidos essa semana:
-
+- ✔ Criar um servidor TypeScript com o `ts-node-dev`;
+- ✔ Aprendemos sobre a implementação do Debug em nossa aplicação;
+- ✔ Aqui demos start no projeto GoBarber;
+    - ✔ Aprendemos a cadastrar agendamentos;
+    - ✔ A validar datas;
+    - ✔ A usar a biblioteca `date-fns`;
+    - ✔ Model de Agendamento;
+    - ✔ Criar repositórios;
+        - ✔ Conceitos como Persistência foram bem pontuados.
+    - ✔ Listar agendamentos;
+    - ✔ Trabalhar com dados;
+        - ✔ Conceitos como DTO (Data Transfer Object) foram bem pontuados.
+    - ✔ Services & SOLID;
+- ✔ Muitos conceitos de Arquitetura de software e Design Patterns;
 - ✔ Três principais estratégias para trabalhar com bancos de dados;
     - Driver;
     - Query Builder;
