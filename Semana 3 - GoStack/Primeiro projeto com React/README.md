@@ -13,3 +13,5 @@ Utilizamos a API do GitHub para dinamizar as informações na tela e mostrar inf
 - ✔ Salvar informação no `Local Storage`;
 - ✔ Fazer a navegação das rotas;
 - ✔ Dentre outros conceitos e muitíssimos insights.
+
+💥Para acessar a aplicação em funcionamento, clique [aqui](https://github-explorer-eight-tawny.vercel.app/).
