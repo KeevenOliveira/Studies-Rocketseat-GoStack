@@ -4,10 +4,10 @@ import express, {Request, Response, NextFunction} from 'express';
 import 'express-async-errors';
 import cors from 'cors';
 import routes from './routes/index'
-import uploadConfig from './config/upload';
-import AppError from './errors/AppError';
+import uploadConfig from '../../../config/upload';
+import AppError from '../../../shared/errors/AppError';
 
-import './database'
+import '../typeorm'
 
 const app = express();
 app.use(cors()); //evita que alguns sites mal intencionados entrem em nosso banco de dados.
