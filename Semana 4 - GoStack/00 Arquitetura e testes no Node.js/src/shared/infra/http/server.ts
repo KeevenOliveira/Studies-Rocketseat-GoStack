@@ -8,6 +8,7 @@ import uploadConfig from '../../../config/upload';
 import AppError from '../../../shared/errors/AppError';
 
 import '../typeorm'
+import '../../container';
 
 const app = express();
 app.use(cors()); //evita que alguns sites mal intencionados entrem em nosso banco de dados.

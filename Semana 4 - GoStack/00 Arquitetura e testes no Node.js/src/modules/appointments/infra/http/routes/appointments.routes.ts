@@ -1,7 +1,8 @@
 import { Router } from 'express';
 import { parseISO } from 'date-fns';
 
-import AppointmentsRepository from '../../typeorm/repositories/AppointmentsRepository';
+import { container } from 'tsyringe';
+
 import CreateAppointmentService from '../../../services/CreateAppointmentService'; 
 import ensureAuthenticated from '../../../../users/infra/http/middlewares/ensureAuthenticated';
 
@@ -18,11 +19,10 @@ appointmentsRouter.use(ensureAuthenticated); // vai aplicar esse middleware em t
 
 appointmentsRouter.post('/', async (request, response)=>{    
         const { provider_id, date } = request.body;
-        const appointmentsRepository = new AppointmentsRepository();
         
         const parsedDate = parseISO(date);
         
-        const createAppointment = new CreateAppointmentService(appointmentsRepository);
+        const createAppointment = container.resolve(CreateAppointmentService);
 
         const appointment = await createAppointment.execute({date: parsedDate, provider_id})
 
