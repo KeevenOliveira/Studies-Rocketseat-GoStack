@@ -2,40 +2,30 @@
 // import FakeAppointmentsRepository from '../repositories/fakes/FakeAppointmentsRepository';
 import AppError from '../../../shared/errors/AppError';
 import FakeUsersRepository from '../repositories/fakes/FakeUsersRepository';
-import CreateUserService from'./CreateUserService';
+import AuthenticateUserService from'./AuthenticateUserService';
+import CreateUserService from './CreateUserService';
 import FakeHashProvider from '../providers/HashProvider/fakes/FakeHashProvider';
 
-describe('CreateUser', () => {
+describe('AuthenticateUser', () => {
 
-    it('should be able to create a new user', async() => {
+    it('should be able to authenticate', async() => {
         const fakeUsersRepository = new FakeUsersRepository();
         const fakeHashProvider = new FakeHashProvider();
         const createUser = new CreateUserService(fakeUsersRepository, fakeHashProvider);
+        const authenticateUser = new AuthenticateUserService(fakeUsersRepository, fakeHashProvider);
+
         const user = await createUser.execute({
             name: 'Keeven Oliveira',
             email: 'contato.keevenoliveira@gmail.com',
             password: 'rayAishiteru'
         })
-        expect(user).toHaveProperty('id');
-        // expect(user).toHaveProperty('password');
-        // expect(user).toHaveProperty('name');
-        // expect(user.name).toBe('123454124');
-    });
 
-    it('should not be able to create a new user with same email from another', async() => {
-        const fakeUsersRepository = new FakeUsersRepository();
-        const fakeHashProvider = new FakeHashProvider();
-        const createUser = new CreateUserService(fakeUsersRepository, fakeHashProvider);
-        const user = await createUser.execute({
-            name: 'Keeven Oliveira',
+        const response = await authenticateUser.execute({
             email: 'contato.keevenoliveira@gmail.com',
             password: 'rayAishiteru'
         })
-        expect(createUser.execute({
-            name: 'Keeven Oliveira',
-            email: 'contato.keevenoliveira@gmail.com',
-            password: 'rayAishiteru'
-        })).rejects.toBeInstanceOf(AppError);
+        expect(response).toHaveProperty('token');
+        expect(response.user).toEqual(user);
         // expect(user).toHaveProperty('password');
         // expect(user).toHaveProperty('name');
         // expect(user.name).toBe('123454124');
