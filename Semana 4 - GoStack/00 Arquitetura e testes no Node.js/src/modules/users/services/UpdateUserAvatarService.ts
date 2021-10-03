@@ -1,6 +1,3 @@
-import path from 'path';
-import uploadConfig from '../../../config/upload';
-import fs from 'fs';
 import AppError from '../../../shared/errors/AppError';
 
 import { injectable, inject } from 'tsyringe';
@@ -35,16 +32,6 @@ class UpdateUserAvatarService{
             }
             
             if(user.avatar){
-                //Deletar avatar anterior
-                // this.storageProvider.
-
-                // const userAvatarFilePath = path.(uploadConfig.directory, user.avatar);
-
-                // const userAvatarFileExists = await fs.promises.stat(userAvatarFilePath);
-
-                // if(userAvatarFileExists){
-                //     await this.storageProvider.deleteFile(userAvatarFilePath);
-                // }
 
                 await this.storageProvider.deleteFile(user.avatar);
 

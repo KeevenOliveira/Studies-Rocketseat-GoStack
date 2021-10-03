@@ -8,7 +8,7 @@ import FakeHashProvider from '../providers/HashProvider/fakes/FakeHashProvider';
 
 describe('AuthenticateUser', () => {
 
-    it('should be able to authenticate', async() => {
+    it('should be able to authenticate', async () => {
         const fakeUsersRepository = new FakeUsersRepository();
         const fakeHashProvider = new FakeHashProvider();
         const createUser = new CreateUserService(fakeUsersRepository, fakeHashProvider);
@@ -30,7 +30,8 @@ describe('AuthenticateUser', () => {
         // expect(user).toHaveProperty('name');
         // expect(user.name).toBe('123454124');
     });
-    it('should not be able to authenticate when not exists user', async() => {
+
+    it('should not be able to authenticate when not exists user', async () => {
         const fakeUsersRepository = new FakeUsersRepository();
         const fakeHashProvider = new FakeHashProvider();
         const authenticateUser = new AuthenticateUserService(fakeUsersRepository, fakeHashProvider);
@@ -40,32 +41,34 @@ describe('AuthenticateUser', () => {
             email: 'contato.keevenoliveira@gmail.com',
             password: 'rayAishiteru'
         })).rejects.toBeInstanceOf(AppError)
-        // expect(user).toHaveProperty('password');
-        // expect(user).toHaveProperty('name');
-        // expect(user.name).toBe('123454124');
     });
 
-    it('should be able to authenticate', async() => {
+     it('should not be able to authenticate with wrong password', async () => {
         const fakeUsersRepository = new FakeUsersRepository();
         const fakeHashProvider = new FakeHashProvider();
-        const createUser = new CreateUserService(fakeUsersRepository, fakeHashProvider);
-        const authenticateUser = new AuthenticateUserService(fakeUsersRepository, fakeHashProvider);
+
+        const authenticateUser = new AuthenticateUserService(
+        fakeUsersRepository,
+        fakeHashProvider,
+        );
+
+        const createUser = new CreateUserService(
+        fakeUsersRepository,
+        fakeHashProvider,
+        );
 
         await createUser.execute({
             name: 'Keeven Oliveira',
             email: 'contato.keevenoliveira@gmail.com',
             password: 'rayAishiteru'
-        })
+        });
 
-        expect(authenticateUser.execute({
+        expect(
+        authenticateUser.execute({
             email: 'contato.keevenoliveira@gmail.com',
-            password: 'wrong-password'
-        })).rejects.toBeInstanceOf(AppError);
-
-        // expect(response.user).toEqual(user);
-        // expect(user).toHaveProperty('password');
-        // expect(user).toHaveProperty('name');
-        // expect(user.name).toBe('123454124');
+            password: 'wrong-password',
+        }),
+        ).rejects.toBeInstanceOf(AppError);
     });
         
 })
